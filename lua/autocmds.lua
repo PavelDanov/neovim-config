@@ -8,7 +8,7 @@
 --
 -- File: autocmds.lua
 -- Description: Autocommand functions
--- Author: Kien Nguyen-Tuan <kiennt2609@gmail.com>
+-- Author: Pavel Danov <pavel.danov@vermilion.digital>
 -- Define autocommands with Lua APIs
 -- See: h:api-autocmd, h:augroup
 local augroup = vim.api.nvim_create_augroup -- Create/get autocommand group
@@ -21,7 +21,7 @@ autocmd("TextYankPost", {
     callback = function()
         vim.highlight.on_yank({
             higroup = "IncSearch",
-            timeout = "1000"
+            timeout = 200
         })
     end
 })
@@ -34,12 +34,12 @@ autocmd("BufWritePre", {
 
 -- Auto format on save using the attached (optionally filtered) language servere clients
 -- https://neovim.io/doc/user/lsp.html#vim.lsp.buf.format()
-autocmd("BufWritePre", {
-    pattern = "",
-    command = ":silent lua vim.lsp.buf.format()"
-})
+-- autocmd("BufWritePre", {
+--    pattern = "",
+--    command = ":silent lua vim.lsp.buf.format()"
+-- })
 
--- Don"t auto commenting new lines
+-- Don't auto commenting new lines
 autocmd("BufEnter", {
     pattern = "",
     command = "set fo-=c fo-=r fo-=o"
@@ -51,10 +51,10 @@ autocmd("Filetype", {
 })
 
 -- Set colorcolumn
-autocmd("Filetype", {
-    pattern = { "python", "rst", "c", "cpp" },
-    command = "set colorcolumn=80"
-})
+-- autocmd("Filetype", {
+--    pattern = { "python", "rst", "c", "cpp" },
+--    command = "set colorcolumn=80"
+-- })
 
 autocmd("Filetype", {
     pattern = { "gitcommit", "markdown", "text" },

@@ -8,7 +8,7 @@
 --
 -- File: options.lua
 -- Description: General Neovim settings and configuration
--- Author: Kien Nguyen-Tuan <kiennt2609@gmail.com>
+-- Author: Pavel Danov <pavel.danov@vermilion.digital>
 local cmd = vim.cmd
 -- Set options (global/buffer/windows-scoped)
 local opt = vim.opt
@@ -61,16 +61,17 @@ opt.listchars = {
 }
 
 -- Hide cmd line
-opt.cmdheight = 0      -- more space in the neovim command line for displaying messages
+opt.cmdheight = 0         -- more space in the neovim command line for displaying messages
 
-opt.mouse = "a"        -- allow the mouse to be used in neovim
-opt.number = true      -- set numbered lines
-opt.scrolloff = 18     -- minimal number of screen lines to keep above and below the cursor
-opt.sidescrolloff = 3  -- minimal number of screen columns to keep to the left and right (horizontal) of the cursor if wrap is `false`
-opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
-opt.splitbelow = true  -- open new split below
-opt.splitright = true  -- open new split to the right
-opt.wrap = true        -- display a wrapped line
+opt.mouse = "a"           -- allow the mouse to be used in neovim
+opt.number = true         -- set numbered lines
+opt.relativenumber = true -- set relative numbers
+opt.scrolloff = 18        -- minimal number of screen lines to keep above and below the cursor
+opt.sidescrolloff = 3     -- minimal number of screen columns to keep to the left and right (horizontal) of the cursor if wrap is `false`
+opt.signcolumn = "yes"    -- always show the sign column, otherwise it would shift the text each time
+opt.splitbelow = true     -- open new split below
+opt.splitright = true     -- open new split to the right
+opt.wrap = true           -- display a wrapped line
 
 -- backups
 opt.backup = false      -- create a backup file
@@ -88,7 +89,7 @@ opt.showmode = false
 
 -- perfomance
 -- remember N lines in history
-opt.history = 100    -- keep 100 lines of history
+opt.history = 1000   -- keep 1000 lines of history
 opt.redrawtime = 1500
 opt.timeoutlen = 250 -- time to wait for a mapped sequence to complete (in milliseconds)
 opt.ttimeoutlen = 10

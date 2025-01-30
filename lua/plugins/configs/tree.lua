@@ -8,7 +8,7 @@
 --
 -- File: plugins/configs/tree.lua
 -- Description: nvim-tree config
--- Author: Kien Nguyen-Tuan <kiennt2609@gmail.com>
+-- Author: Pavel Danov <pavel.danov@vermilion.digital>
 return {
     filters = {
         dotfiles = false

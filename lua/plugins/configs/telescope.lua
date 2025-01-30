@@ -8,7 +8,7 @@
 --
 -- File: plugins/configs/telescope.lua
 -- Description: nvim-telescope config
--- Author: Kien Nguyen-Tuan <kiennt2609@gmail.com>
+-- Author: Pavel Danov <pavel.danov@vermilion.digital>
 return {
     defaults = {
         prompt_prefix = "   ",

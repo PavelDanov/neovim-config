@@ -8,7 +8,7 @@
 --
 -- File: plugins/configs/cmp.lua
 -- Description: cmp configuration
--- Author: Kien Nguyen-Tuan <kiennt2609@gmail.com>
+-- Author: Pavel Danov <pavel.danov@vermilion.digital>
 local cmp = require "cmp"
 
 require("nvim-autopairs").setup({
@@ -39,7 +39,8 @@ end
 
 local options = {
   completion = {
-    completeopt = "menu,menuone"
+    completeopt = "menu,menuone",
+		autocomplete = false -- Disable automatic suggestions
   },
 
   window = {

@@ -72,6 +72,13 @@ local builtin_plugins = {
             require("plugins.configs.telescope")
         end
     },
+    -- Comment
+    {
+      'numToStr/Comment.nvim',
+       opts = {
+       -- add any options here
+       }
+    },
     -- Statusline
     -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
     {
