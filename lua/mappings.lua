@@ -12,6 +12,7 @@
 
 -- <leader> is a space now
 local map = vim.keymap.set
+local gs = require("gitsigns")
 map("n", "<leader>q", ":qa!<CR>", {})
 -- Fast saving with <leader> and s
 map("n", "<leader>s", ":w<CR>", {})
@@ -57,3 +58,28 @@ map("n", "<leader>tl", function()
 		vim.opt.list = true
 	end
 end, { desc = "Toggle listchars"})
+
+-- Gitsigns
+map("n", "]h", function() gs.nav_hunk("next") end, { desc = "Next Git hunk" })
+map("n", "[h", function() gs.nav_hunk("prev") end, { desc = "Previous Git hunk" })
+-- Stage / Reset Hunks
+map("n", "<leader>hs", gs.stage_hunk, { desc = "Stage Git hunk" })
+map("n", "<leader>hr", gs.reset_hunk, { desc = "Reset Git hunk" })
+map("v", "<leader>hs", function() gs.stage_hunk { vim.fn.line("."), vim.fn.line("v") } end, { desc = "Stage selected hunk" })
+map("v", "<leader>hr", function() gs.reset_hunk { vim.fn.line("."), vim.fn.line("v") } end, { desc = "Reset selected hunk" })
+-- Undo Last Stage
+map("n", "<leader>hu", gs.undo_stage_hunk, { desc = "Undo last staged hunk" })
+-- Preview Hunk
+map("n", "<leader>hp", gs.preview_hunk, { desc = "Preview Git hunk" })
+-- Blame Line
+map("n", "<leader>hb", gs.blame_line, { desc = "Git blame current line" })
+map("n", "<leader>hB", function() gs.blame_line { full = true } end, { desc = "Full Git blame" })
+-- Toggle Git Diff Signs
+map("n", "<leader>ht", gs.toggle_signs, { desc = "Toggle Git signs" })
+-- Reset Buffer
+map("n", "<leader>hR", gs.reset_buffer, { desc = "Reset entire file to last commit" })
+-- Diff View
+map("n", "<leader>hd", gs.diffthis, { desc = "Git diff against index" })
+map("n", "<leader>hD", function() gs.diffthis("~1") end, { desc = "Git diff against last commit" })
+-- Toggle Git Line Highlights
+map("n", "<leader>hl", gs.toggle_linehl, { desc = "Toggle Git line highlights" })
