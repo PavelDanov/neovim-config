@@ -8,7 +8,7 @@
 --
 -- File: mappings.lua
 -- Description: Key mapping configs
--- Author: Kien Nguyen-Tuan <kiennt2609@gmail.com>
+-- Author: Pavel Danov <pavel.danov@vermilion.digital>
 
 -- <leader> is a space now
 local map = vim.keymap.set
@@ -48,3 +48,12 @@ map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP Diagnostic locli
 -- Comment
 map("n", "mm", "gcc", { desc = "Toggle comment", remap = true })
 map("v", "mm", "gc", { desc = "Toggle comment", remap = true })
+
+-- Toggle listchars
+map("n", "<leader>tl", function()
+	if vim.opt.list:get() then
+		vim.opt.list = false
+	else
+		vim.opt.list = true
+	end
+end, { desc = "Toggle listchars"})
