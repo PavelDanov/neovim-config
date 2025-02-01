@@ -20,7 +20,8 @@ for _, cmd in ipairs({ "git", "rg", { "fd", "fdfind" } }) do
     end
 end
 
-vim.opt.guifont = "Inconsolata LGC Nerd Font:h14"
+--vim.opt.guifont = "Inconsolata LGC Nerd Font:h14"
+vim.opt.guifont = "RobotoMono Nerd Font:h15"
 vim.opt.termguicolors = true -- enable 24-bit RGB colors
 -- Disable annoying deprecated message
 vim.deprecate = function() end

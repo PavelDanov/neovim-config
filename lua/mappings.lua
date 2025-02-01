@@ -42,6 +42,13 @@ map("n", "<leader>nf", ":NvimTreeFindFile<CR>", { desc = "Search file in NvimTre
 map("n", "<leader>gm", function()
     require("conform").format { lsp_fallback = true }
 end, { desc = "General Format file" })
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
+-- vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Find references" })
+vim.keymap.set("n", "gr", function() require("telescope.builtin").lsp_references() end, { desc = "Find references" })
+vim.keymap.set("n", "gi", function() require("telescope.builtin").lsp_implementations() end, { desc = "Find implementations" })
+vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show documentation" })
 
 -- global lsp mappings
 map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP Diagnostic loclist" })
