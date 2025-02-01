@@ -14,18 +14,18 @@ local lualine_require = require("lualine_require")
 
 local function loadcolors()
     -- Rose-pine palette
-    local rosepine = require("rose-pine.palette")
+    local palette = require("github-theme.palette")
     local colors = {
-        bg = rosepine.base,
-        fg = rosepine.text,
-        yellow = rosepine.gold,
-        cyan = rosepine.foam,
-        black = rosepine.subtled,
-        green = rosepine.pine,
-        white = rosepine.text,
-        magenta = rosepine.iris,
-        blue = rosepine.rose,
-        red = rosepine.love
+        bg = palette.base,
+        fg = palette.text,
+        yellow = palette.gold,
+        cyan = palette.foam,
+        black = palette.subtled,
+        green = palette.pine,
+        white = palette.text,
+        magenta = palette.iris,
+        blue = palette.rose,
+        red = palette.love
     }
 
     -- Try to load pywal colors

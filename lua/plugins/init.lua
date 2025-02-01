@@ -96,6 +96,7 @@ local builtin_plugins = {
             dark_variant = "main"
         }
     },
+    { 'projekt0n/github-nvim-theme', name = 'github-theme' },
     -- LSP stuffs
     -- Portable package manager for Neovim that runs everywhere Neovim runs.
     -- Easily install and manage LSP servers, DAP servers, linters, and formatters.
