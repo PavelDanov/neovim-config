@@ -125,3 +125,6 @@ end
 -- Colorscheme
 -- By default, use rose-pine
 cmd.colorscheme("github_dark_tritanopia")
+
+-- .editorconfig
+opt.editorconfig = true
