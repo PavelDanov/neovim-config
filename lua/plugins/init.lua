@@ -97,6 +97,16 @@ local builtin_plugins = {
         }
     },
     { 'projekt0n/github-nvim-theme', name = 'github-theme' },
+    {
+      'sainnhe/sonokai',
+      lazy = false,
+      priority = 1000,
+      config = function()
+        -- Optionally configure and load the colorscheme
+        -- directly inside the plugin declaration.
+       vim.cmd.colorscheme('sonokai')
+      end
+    },
     -- LSP stuffs
     -- Portable package manager for Neovim that runs everywhere Neovim runs.
     -- Easily install and manage LSP servers, DAP servers, linters, and formatters.

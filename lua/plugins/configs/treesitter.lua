@@ -17,9 +17,7 @@ local ensure_installed = exist and type(custom) == "table" and custom.ensure_ins
 return {
     -- A list of parser names, or "all"
     ensure_installed = {
-        "go", "python", "dockerfile", "json",
-        "yaml", "markdown", "html", "scss",
-        "css", "vim", "lua", ensure_installed
+        "all", ensure_installed
     },
 
     highlight = {
