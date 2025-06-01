@@ -124,7 +124,7 @@ end
 
 -- Colorscheme
 -- By default, use rose-pine
-cmd.colorscheme("github_dark_tritanopia")
+cmd.colorscheme("sonokai")
 
 -- .editorconfig
 opt.editorconfig = true
